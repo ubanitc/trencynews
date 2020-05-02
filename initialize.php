@@ -1,24 +1,27 @@
 <?php
-// if(isset($_SESSION['userid'])){
-//         require("./db.php");
-//         $userid = $_SESSION['userid'];
+
+session_start();
+
+if(isset($_SESSION['userid'])){
+        require("./db.php");
+        $userid = $_SESSION['userid'];
         
-//         $stmt = $pdo->prepare('SELECT * FROM users WHERE id= :id');
-//         $stmt->execute(['id'=>$userid]);
-//         $user = $stmt->fetch();
-//         if($user){
-//             $message= $user->email;
-//         }
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE id= :id');
+        $stmt->execute(['id'=>$userid]);
+        $user = $stmt->fetch();
+        if($user){
+            $message= $user->email;
+        }
 
 
 
 
-//     }else{
-//         header("location:https://trencynews.herokuapp.com/login.php");
-//     }
+    }else{
+        header("location:https://trencynews.herokuapp.com/login.php");
+    }
 $curl = curl_init();
 
-$email = "tochukwu.ubani@yahoo.com";
+$email = $message;
 $amount = 200000;  //the amount in kobo. This value is actually NGN 300
 
 // url to go to after payment
