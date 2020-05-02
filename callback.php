@@ -55,16 +55,16 @@ if('success' == $tranx->data->status){
   // please check other things like whether you already gave value for this ref
   // if the email matches the customer who owns the product etc
   // Give value
-    $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
-    $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
-  header ('location: https://trencynews.herokuapp.com/');
+//     $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
+//     $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
+  header('location: https://trencynews.herokuapp.com/');
     
   
 }
 else{
-        $_SESSION['paymentfail'] = "Your Payment Was not Succesful";
+//         $_SESSION['paymentfail'] = "Your Payment Was not Succesful";
 
-    header ('location: https://trencynews.herokuapp.com/');
+    header('location: https://trencynews.herokuapp.com/');
 }
 
 
