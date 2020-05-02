@@ -10,9 +10,6 @@ if(isset($_SESSION['userid'])){
             $message= 'your role is a guest';
         }
 
-    }else{
-        header("location:https://trencynews.herokuapp.com/login.php");
-    }
 
 $curl = curl_init();
 
@@ -58,3 +55,9 @@ print_r($tranx);
 // redirect to page so User can pay
 // uncomment this line to allow the user redirect to the payment page
 header('Location: ' . $tranx['data']['authorization_url']);
+
+
+    }else{
+        header("location:https://trencynews.herokuapp.com/login.php");
+    }
+
