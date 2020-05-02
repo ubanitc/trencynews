@@ -51,13 +51,21 @@ if(isset($_SESSION['userid'])){
         <?php } ?>
         <div class="card-body">
 
-                    <?php if(isset($_SESSION['paymentsuccess'])){
-                        echo $_SESSION['paymentsuccess'];
-                    } ?>
-                    <?php if(isset($_SESSION['paymentfail'])){
-                        echo $_SESSION['paymentfail'];
-                    } ?>
-
+                    <?php if(isset($_SESSION['paymentsuccess'])){?>
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>Your Account is Now Active</strong> <a href="./updateaccount.php">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+                    <?php } ?>
+                    <?php if(isset($_SESSION['paymentfail'])){?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Account Activation Failed</strong> <a href="./updateaccount.php">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>                    <?php } ?>
 
           <?php if(isset($message)){
             ?>
