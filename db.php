@@ -1,8 +1,8 @@
 <?php
 
-$host = "localhost";
-$username = "root";
-$password = "";
+$host = "us-cdbr-east-06.cleardb.net";
+$username = "b2d9d974750f74";
+$password = "6f44b614";
 $dbname = "login system";
 
 $dsn = ("mysql:host=".$host.";dbname=".$dbname);
