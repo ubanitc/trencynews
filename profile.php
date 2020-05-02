@@ -53,7 +53,7 @@ if($user->role === 'guest'){
 
 
 }else{
-    header("location:login.php");
+    header("location:http://trencynews.herokuapp.com/login.php");
 }
 
 
