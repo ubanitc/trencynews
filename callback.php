@@ -55,7 +55,7 @@ if('success' == $tranx->data->status){
   // please check other things like whether you already gave value for this ref
   // if the email matches the customer who owns the product etc
   // Give value
-    $stmt = $pdo->query("UPDATE users SET status='active");
+    $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
     $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
   header ('location: https://trencynews.herokuapp.com/');
     
