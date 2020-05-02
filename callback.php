@@ -39,21 +39,21 @@ if('success' == $tranx->data->status){
   // Give value
         session_start();
 
-if(isset($_SESSION['userid'])){
-        require("./db.php");
-        $userid = $_SESSION['userid'];
+// if(isset($_SESSION['userid'])){
+//         require("./db.php");
+//         $userid = $_SESSION['userid'];
         
-       $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
-        $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
-  header('location: https://trencynews.herokuapp.com/;
+//        $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
+//         $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
+       header('location: https://trencynews.herokuapp.com/;
        
         
 
 
 
-    }else{
-        header("location:https://trencynews.herokuapp.com/login.php");
-    }
+//     }else{
+//         header("location:https://trencynews.herokuapp.com/login.php");
+//     }
    
     
   
