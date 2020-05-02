@@ -18,7 +18,7 @@
 //     }
 $curl = curl_init();
 
-$email = tochukwu.ubani@yahoo.com;
+$email = "tochukwu.ubani@yahoo.com";
 $amount = 200000;  //the amount in kobo. This value is actually NGN 300
 
 // url to go to after payment
