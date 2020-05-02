@@ -13,7 +13,7 @@ if(isset($_SESSION['userid'])){
         }
 
     }else{
-        header('location:login.php');
+        header('location:http://trencynews.herokuapp.com/login.php');
     }
 
 ?>
@@ -76,7 +76,7 @@ if(isset($_SESSION['userid'])){
 
         <div class="card-body">
                 <h4>Affiliate Link:</h4>
-                <p>https://www.trencynews.com/register.php?refid=<?php echo $user->name?></p>
+                <p>http://trencynews.herokuapp.com/register?refid=<?php echo $user->name?></p>
         </div>
 </div>
 
