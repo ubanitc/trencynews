@@ -34,7 +34,7 @@ if(isset($_SESSION['userid'])){
             ?>
          <h5>Welcome <?php echo $user->dpname ?></h5>
         </div>
-                <?php if( $user->acctno === 'not set' or $user->bank === 'not set') { ?>
+                <?php if( $user->acctno === '' or $user->bank === '') { ?>
                 
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Update Account Details</strong> Your account details are not set <a href="https://trencynews.herokuapp.com/updateaccount.php"><button class="btn btn-success" style="float:right;">Update Account</button></a>
