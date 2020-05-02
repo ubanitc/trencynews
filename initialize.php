@@ -34,7 +34,7 @@ curl_setopt_array($curl, array(
     'callback_url' => $callback_url
   ]),
   CURLOPT_HTTPHEADER => [
-    "authorization: Bearer sk_test_a9f8a0cae1a2315feb07f6a046d362283b16423f", //replace this with your own test key
+    "authorization: Bearer sk_test_900aa5799bda7a5aa26ad6e203efd93369d15d0b", //replace this with your own test key
     "content-type: application/json",
     "cache-control: no-cache"
   ],
