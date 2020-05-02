@@ -38,30 +38,30 @@ if('success' == $tranx->data->status){
   // if the email matches the customer who owns the product etc
   // Give value
   
-  header('location:https://trencynews.herokuapp.com/');
         // session_start();
 
-// if(isset($_SESSION['userid'])){
-//         require("./db.php");
-//         $userid = $_SESSION['userid'];
+if(isset($_SESSION['userid'])){
+        require("./db.php");
+        $userid = $_SESSION['userid'];
         
-//        $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
-//         $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
+       $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
+        $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
        
-       
+         header('location:https://trencynews.herokuapp.com/');
+
         
 
 
 
-//     }else{
-//         header("location:https://trencynews.herokuapp.com/login.php");
-//     }
+    }else{
+        header("location:https://trencynews.herokuapp.com/login.php");
+    }
    
     
   
 }
 else{
-//         $_SESSION['paymentfail'] = "Your Payment Was not Succesful";
+        $_SESSION['paymentfail'] = "Your Payment Was not Succesful";
 
     header('location: https://trencynews.herokuapp.com/');
 }
