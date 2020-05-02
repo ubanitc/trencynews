@@ -3,18 +3,23 @@ if(isset($_SESSION['userid'])){
         require("./db.php");
         $userid = $_SESSION['userid'];
         
-        $stmt = $pdo->prepare('SELECT * FROM users WHERE id= ?');
-        $stmt->execute([$userid]);
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE id= :id');
+        $stmt->execute(['id'=>$userid]);
         $user = $stmt->fetch();
         if($user){
             $message= 'your role is a guest';
         }
 
 
+
+
+    }else{
+        header("location:https://trencynews.herokuapp.com/login.php");
+    }
 $curl = curl_init();
 
 $email = $user->email;
-$amount = 2000000;  //the amount in kobo. This value is actually NGN 300
+$amount = 200000;  //the amount in kobo. This value is actually NGN 300
 
 // url to go to after payment
 $callback_url = "https://trencynews.herokuapp.com/callback.php"; 
@@ -55,9 +60,4 @@ print_r($tranx);
 // redirect to page so User can pay
 // uncomment this line to allow the user redirect to the payment page
 header('Location: ' . $tranx['data']['authorization_url']);
-
-
-    }else{
-        header("location:https://trencynews.herokuapp.com/login.php");
-    }
 
