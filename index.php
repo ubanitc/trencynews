@@ -15,21 +15,7 @@ if(isset($_SESSION['userid'])){
     }
 
 
-     if(isset($_POST['activate'])) {
-                    $stmt = $pdo->query("SELECT * FROM users WHERE status='active' and stage='1' ORDER BY RAND() LIMIT 1");
-                    $thiss = $stmt->fetch();
-                    $topay = $thiss->id;
-
-
-
-                    
-                   
-                    
-                   
-
-
-                    
-                }
+     
                 
                 
                 
@@ -46,37 +32,23 @@ if(isset($_SESSION['userid'])){
 
         <?php if(isset($message)){
             ?>
-         <h5>Welcome <?php echo $user->name ?></h5>
-            <div class="card">
+         <h5>Welcome <?php echo $user->dpname ?></h5>
+        </div>
+                <?php if( $user->acctno === 'not set' or $user->bank === 'not set') { ?>
+                
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Update Account Details</strong> Your account details are not set <a href="https://trencynews.herokuapp.com/updateaccount.php"><button class="btn btn-success" style="float:right;">Update Account</button></a>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+                <?php } ?>
 
-                <h4 style="display:inline;">Account Status: <?php echo $user->status;?></h4>
+            <?php }else{ ?>
 
-                <?php if($user->status==='inactive') {?>
-                <form action="index.php" method="POST">
-
-                <?php if(isset($topay)){
-
-                }else{ ?>
-                <button class="btn btn-success" name="activate">Activate</button>
-                <?php }?>
-</form>
-                 <?php if(isset($topay)){
-                    $stmt = $pdo->query("SELECT * FROM users WHERE id = $topay");
-                    $pay = $stmt->fetch();
-
-                    echo $pay->acctno. "<br>";
-                    echo $pay->acctname. "<br>";
-                    echo $pay->bank;
-
-                }?> 
-
-            <?php } ?>
-            </div>
-
-        <?php }else{?>
+        
           <h5>Welcome Guest</h5>
         <?php } ?>
-        </div>
         <div class="card-body">
           <?php if(isset($message)){
             ?>
