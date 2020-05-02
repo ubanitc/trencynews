@@ -45,7 +45,7 @@ if(isset($_SESSION['userid'])){
         
        $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
         $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
-  header('location: https://trencynews.herokuapp.com/paid.php');
+  header('location: https://trencynews.herokuapp.com/;
        
         
 
@@ -61,7 +61,7 @@ if(isset($_SESSION['userid'])){
 else{
 //         $_SESSION['paymentfail'] = "Your Payment Was not Succesful";
 
-    header('location: https://trencynews.herokuapp.com/fail.php');
+    header('location: https://trencynews.herokuapp.com/');
 }
 
 
