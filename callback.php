@@ -1,5 +1,12 @@
 <?php
+        session_start();
 
+if(isset($_SESSION['userid'])){
+        require("./db.php");
+        $userid = $_SESSION['userid'];
+  }else{
+        header("location:https://trencynews.herokuapp.com/login.php");
+    }
 
 $curl = curl_init();
 $reference = isset($_GET['reference']) ? $_GET['reference'] : '';
@@ -38,11 +45,9 @@ if('success' == $tranx->data->status){
   // if the email matches the customer who owns the product etc
   // Give value
   
-        // session_start();
+        
 
-if(isset($_SESSION['userid'])){
-        require("./db.php");
-        $userid = $_SESSION['userid'];
+
         
        $stmt = $pdo->query("UPDATE users SET status='active' WHERE id=$userid");
         $_SESSION['paymentsuccess'] = "Your Payment Was Succesfull and Your Account is now Acitve";
@@ -53,9 +58,7 @@ if(isset($_SESSION['userid'])){
 
 
 
-    }else{
-        header("location:https://trencynews.herokuapp.com/login.php");
-    }
+    
    
     
   
