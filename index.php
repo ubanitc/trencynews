@@ -50,10 +50,19 @@ if(isset($_SESSION['userid'])){
           <h5>Welcome Guest</h5>
         <?php } ?>
         <div class="card-body">
+
+                    <?php if(isset($_SESSION['paymentsuccess'])){
+                        echo $_SESSION['paymentsuccess'];
+                    } ?>
+                    <?php if(isset($_SESSION['paymentfail'])){
+                        echo $_SESSION['paymentfail'];
+                    } ?>
+
+
           <?php if(isset($message)){
             ?>
          <h5>This is a super secret content for only logged in people</h5>
-<?php if($user->status === 'inactive'){?>
+            <?php if($user->status === 'inactive'){?>
 
          <p>Your Account is Inactive: </p><a href="./initialize.php"><button class="btn btn-primary">Activate Account</button></a>
             <?php }?>
@@ -63,6 +72,7 @@ if(isset($_SESSION['userid'])){
         </div>
       </div>
     </div>
+
 
 <?php require("./inc/footer.html");?>
 
