@@ -46,7 +46,7 @@ if(isset($_POST['register'])){
 
 
         
-            header("location:login.php");
+            header("location:http://trencynews.herokuapp.com/login.php");
         }
     }
     
