@@ -49,9 +49,10 @@ if(isset($_SESSION['userid'])){
         
           <h5>Welcome Guest</h5>
         <?php } ?>
-        <div class="card-body">
+        
 
                     <?php if(isset($_SESSION['paymentsuccess'])){?>
+              <div class="card-body">
                         <div class="alert alert-primary alert-dismissible fade show" role="alert">
   <strong>Your Account is Now Active</strong> <a href="./updateaccount.php"><button class="btn btn-success" style="float:right;">Update Account</button></a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -66,7 +67,7 @@ if(isset($_SESSION['userid'])){
     <span aria-hidden="true">&times;</span>
   </button>
 </div>                    <?php } ?>
-
+</div>
 
           <?php if(isset($message)){
             ?>
@@ -78,7 +79,7 @@ if(isset($_SESSION['userid'])){
         <?php }else{?>
 <!--           <h4>Please Login/register to unlock all contents</h4> -->
         <?php } ?>
-        </div>
+        
       </div>
     </div>
 <div class="d-flex bd-highlight mb-3" style="height:70px">
