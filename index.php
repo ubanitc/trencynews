@@ -81,7 +81,10 @@ if(isset($_SESSION['userid'])){
         </div>
       </div>
     </div>
-
+<div class="d-flex bd-highlight mb-3" style="height:70px">
+  <div class="p-2 flex-fill bd-highlight border border-primary mr-2">Ad Space</div>
+  
+</div>
     <?php
     
             $stmt = $pdo->query("SELECT * FROM posts ORDER BY id DESC");
