@@ -40,6 +40,7 @@ require("./inc/header.html");
     <div class="card-header">
             <strong><?php echo $post->post_title?></strong> posted by <strong><?php echo $post->posted_by?></strong>   <?php echo $post->time?>
     </div>
+        <div class="card-body">
            <?php 
                 
                 echo $post->post_content;
@@ -51,6 +52,7 @@ src="https://ww
 w.youtube.com/embed/il_t1WVLNxk"> 
 </iframe>
 </p>
+        </div>
 </div>
 </div>
 </div>
