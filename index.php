@@ -70,13 +70,13 @@ if(isset($_SESSION['userid'])){
 
           <?php if(isset($message)){
             ?>
-         <h5>This is a super secret content for only logged in people</h5>
+<!--          <h5>This is a super secret content for only logged in people</h5> -->
             <?php if($user->status === 'inactive'){?>
 
          <p>Your Account is Inactive: </p><a href="./initialize.php"><button class="btn btn-primary">Activate Account</button></a>
             <?php }?>
         <?php }else{?>
-          <h4>Please Login/register to unlock all contents</h4>
+<!--           <h4>Please Login/register to unlock all contents</h4> -->
         <?php } ?>
         </div>
       </div>
