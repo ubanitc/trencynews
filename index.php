@@ -81,7 +81,7 @@ if(isset($_SESSION['userid'])){
       </div>
     </div>
 <?php
-    <?php
+    
             $stmt = $pdo->query("SELECT * FROM posts ORDER BY id DESC");
             $posts = $stmt->fetchAll(); ?>
             <div class="container">
@@ -95,6 +95,9 @@ if(isset($_SESSION['userid'])){
                 <a href="/img/post.php?id=<?php echo $post->id ?>" >>><?php echo $post->post_title."<<<br>"?></a>
 
             <?php }?>
+</div>
+</div>
+</div>
 
 <?php require("./inc/footer.html");?>
 
