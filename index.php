@@ -1,8 +1,8 @@
 <?php
 session_start();
 
+require("./db.php");
 if(isset($_SESSION['userid'])){
-        require("./db.php");
         $userid = $_SESSION['userid'];
         
         $stmt = $pdo->prepare('SELECT * FROM users WHERE id= ?');
@@ -27,17 +27,17 @@ if(isset($_SESSION['userid'])){
 <?php require("./inc/header.html");?>
 
 <div class="container">
-      <div class="card bg-light mb-3">
+      <div class="card rounded-lg bg-light mb-3">
         <div class="card-header">
 
         <?php if(isset($message)){
             ?>
          <h5>Welcome <?php echo $user->dpname ?></h5>
         </div>
-                <?php if( $user->acctno === '' or $user->bank === '') { ?>
+                <?php if( $user->acctno === "" or $user->bank === '') { ?>
                 
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Update Account Details</strong> Your account details are not set <a href="https://trencynews.herokuapp.com/updateaccount.php"><button class="btn btn-success" style="float:right;">Update Account</button></a>
+  <strong>Update Account Details</strong> Your account details are not set <a href="./updateaccount.php"><button class="btn btn-success" style="float:right;">Update Account</button></a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -53,7 +53,7 @@ if(isset($_SESSION['userid'])){
 
                     <?php if(isset($_SESSION['paymentsuccess'])){?>
                         <div class="alert alert-primary alert-dismissible fade show" role="alert">
-  <strong>Your Account is Now Active</strong> <a href="./updateaccount.php">
+  <strong>Your Account is Now Active</strong> <a href="./updateaccount.php"><button class="btn btn-success" style="float:right;">Update Account</button></a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -61,11 +61,12 @@ if(isset($_SESSION['userid'])){
                     <?php } ?>
                     <?php if(isset($_SESSION['paymentfail'])){?>
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Account Activation Failed</strong> <a href="./updateaccount.php">
+  <strong>Account Activation Failed</strong> <a href="./updateaccount.php"><button class="btn btn-success" style="float:right;">Update Account</button></a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>                    <?php } ?>
+
 
           <?php if(isset($message)){
             ?>
@@ -80,7 +81,8 @@ if(isset($_SESSION['userid'])){
         </div>
       </div>
     </div>
-<?php
+
+    <?php
     
             $stmt = $pdo->query("SELECT * FROM posts ORDER BY id DESC");
             $posts = $stmt->fetchAll(); ?>
@@ -98,6 +100,7 @@ if(isset($_SESSION['userid'])){
 </div>
 </div>
 </div>
+
 
 <?php require("./inc/footer.html");?>
 
