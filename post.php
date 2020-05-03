@@ -30,8 +30,7 @@ require("./inc/header.html");
                             <h4><?php echo $post->post_title?></h4>
   <div class="d-flex bd-highlight mb-3" style="height:70px">
   <div class="p-2 flex-fill bd-highlight border border-primary mr-2">Ad Space</div>
-  <div class="p-2 flex-fill bd-highlight border border-primary mr-2">Ad Space</div>
-  <div class="p-2 flex-fill bd-highlight border border-primary">Ad Space</div>
+  
 </div>
                 </div>
 <div class="container">
@@ -58,7 +57,11 @@ w.youtube.com/embed/il_t1WVLNxk">
 </div>
  </div>
 
-
+<div class="container text-center">
+  <div class="d-flex bd-highlight mb-3" style="height:70px">
+  <div class="p-2 flex-fill bd-highlight border border-primary mr-2">Ad Space</div>
+ 
+</div>
     
 
 
