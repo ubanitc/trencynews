@@ -39,7 +39,7 @@ require("./inc/header.html");
     <div class="card rounded-lg">
         
     <div class="card-header">
-            <strong><?php echo $post->post_title?></strong> posted by <strong><?php echo $post->posted_by?></strong>   <?php echo $post->time?>
+            <strong><?php echo $post->post_title?></strong> posted by <strong><?php echo $post->posted_by?></strong>   
     </div>
     <div class="card-body text-center">
            <?php 
