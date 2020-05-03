@@ -40,7 +40,6 @@ require("./inc/header.html");
     <div class="card-header">
             <strong><?php echo $post->post_title?></strong> posted by <strong><?php echo $post->posted_by?></strong>   <?php echo $post->time?>
     </div>
-    <div class="card-body text-center">
            <?php 
                 
                 echo $post->post_content;
