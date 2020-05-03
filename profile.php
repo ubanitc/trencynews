@@ -104,7 +104,7 @@ if(isset($_SESSION['userid'])){
                 foreach($reffs as $reff){?>
             
         
-                <div class="card-header mb-2">Name:<?php echo $reff->dpname;?><br>Account Status: Inactive</div>
+                <div class="card-header mb-2">Name:<?php echo $reff->dpname;?><br>Account Status: <?php echo $reff->status;?></div>
                 <?php }?>
         </div>
 </div>
