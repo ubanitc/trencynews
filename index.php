@@ -94,7 +94,7 @@ if(isset($_SESSION['userid'])){
     <div class="card-body text-center">
            <?php foreach($posts as $post){?>
                 
-                <a href="/post.php?id=<?php echo $post->id ?>" >>><?php echo $post->post_title."<<<br>"?></a>
+              <strong>  <a href="/post.php?id=<?php echo $post->id ?>" >>><?php echo $post->post_title."<<<br>"?></a> </strong>
 
             <?php }?>
 </div>
